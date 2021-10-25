@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Elements/Gate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Levels/GenericLevel.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Elements/AltGate.tscn" type="PackedScene" id=3]
+
+[node name="Level13" instance=ExtResource( 2 )]
+level_name = "offbeat"
+
+[node name="Gate" parent="Elements" index="1" instance=ExtResource( 1 )]
+position = Vector2( 32, 48 )
+
+[node name="Gate2" parent="Elements" index="2" instance=ExtResource( 1 )]
+position = Vector2( 32, 32 )
+
+[node name="Gate3" parent="Elements" index="3" instance=ExtResource( 1 )]
+position = Vector2( 64, 48 )
+
+[node name="Gate4" parent="Elements" index="4" instance=ExtResource( 1 )]
+position = Vector2( 64, 16 )
+
+[node name="Gate5" parent="Elements" index="5" instance=ExtResource( 1 )]
+position = Vector2( 96, 32 )
+
+[node name="Gate6" parent="Elements" index="6" instance=ExtResource( 1 )]
+position = Vector2( 96, 16 )
+
+[node name="AltGate" parent="Elements" index="7" instance=ExtResource( 3 )]
+position = Vector2( 48, 16 )
+
+[node name="AltGate2" parent="Elements" index="8" instance=ExtResource( 3 )]
+position = Vector2( 48, 32 )
+
+[node name="AltGate3" parent="Elements" index="9" instance=ExtResource( 3 )]
+position = Vector2( 80, 32 )
+
+[node name="AltGate4" parent="Elements" index="10" instance=ExtResource( 3 )]
+position = Vector2( 80, 48 )
+
+[node name="AltGate5" parent="Elements" index="11" instance=ExtResource( 3 )]
+position = Vector2( 112, 48 )
+
+[node name="AltGate6" parent="Elements" index="12" instance=ExtResource( 3 )]
+position = Vector2( 112, 16 )

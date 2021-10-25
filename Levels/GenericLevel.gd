@@ -10,9 +10,16 @@ func _ready():
 func _input(event):
 	if event.is_action_pressed("ui_reset"):
 		get_tree().reload_current_scene()
+	elif event.is_action_pressed("ui_next"):
+		_on_win()
+	elif event.is_action_pressed("ui_prev"):
+		get_tree().change_scene("res://Levels/Level" + str(int(get_tree().current_scene.filename)-1) + ".tscn")
 
 func _on_Player_vertical_movement():
-	get_tree().call_group("mobiles", "move")
+	get_tree().call_group("verti_mobiles", "move")
+
+func _on_Player_horizontal_movement():
+	get_tree().call_group("horiz_mobiles", "move")
 
 func _on_win():
-	get_tree().change_scene("res://Levels/Level" + str(1+int(get_tree().current_scene.filename)) + ".tscn")
+	get_tree().change_scene("res://Levels/Level" + str(int(get_tree().current_scene.filename)+1) + ".tscn")

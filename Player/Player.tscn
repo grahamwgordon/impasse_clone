@@ -45,7 +45,7 @@ position = Vector2( 8, -32 )
 rotation = 1.5708
 
 [node name="PlayerArea" type="Area2D" parent="." groups=[
-"players",
+"player_areas",
 ]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]

@@ -2,11 +2,11 @@ extends Area2D
 
 
 
-var num_stat_obstacles = 0
-var stat_blocked = false
+var num_verti_obstacles = 0
+var verti_blocked = false
 
-var num_mobi_obstacles = 0
-var mobi_blocked = false
+var num_horiz_obstacles = 0
+var horiz_blocked = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,19 +16,19 @@ func _ready():
 
 
 func _on_Edge_area_entered(area):
-	if area.is_in_group("stationary_areas"):
-		num_stat_obstacles += 1
-	if area.is_in_group("mobile_areas"):
-		num_mobi_obstacles += 1
-	stat_blocked = (num_stat_obstacles > 0)
-	mobi_blocked = (num_mobi_obstacles > 0)
+	if area.is_in_group("verti_mobile_areas"):
+		num_verti_obstacles += 1
+	if area.is_in_group("horiz_mobile_areas"):
+		num_horiz_obstacles += 1
+	verti_blocked = (num_verti_obstacles > 0)
+	horiz_blocked = (num_horiz_obstacles > 0)
 
 
 
 func _on_Edge_area_exited(area):
-	if area.is_in_group("stationary_areas"):
-		num_stat_obstacles -= 1
-	if area.is_in_group("mobile_areas"):
-		num_mobi_obstacles -= 1
-	stat_blocked = (num_stat_obstacles > 0)
-	mobi_blocked = (num_mobi_obstacles > 0)
+	if area.is_in_group("verti_mobile_areas"):
+		num_verti_obstacles -= 1
+	if area.is_in_group("horiz_mobile_areas"):
+		num_horiz_obstacles -= 1
+	verti_blocked = (num_verti_obstacles > 0)
+	horiz_blocked = (num_horiz_obstacles > 0)

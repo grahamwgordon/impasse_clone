@@ -9,6 +9,9 @@ radius = 6.11616
 
 [node name="Goal" type="Area2D"]
 script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

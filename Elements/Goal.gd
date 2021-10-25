@@ -15,5 +15,5 @@ func _ready():
 
 
 func _on_Goal_area_entered(area):
-	if area.is_in_group("players"):
+	if area.is_in_group("player_areas"):
 		emit_signal("win")
