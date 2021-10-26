@@ -21,5 +21,8 @@ func _on_Player_vertical_movement():
 func _on_Player_horizontal_movement():
 	get_tree().call_group("horiz_mobiles", "move")
 
+func _on_button_pressed():
+	get_tree().call_group("locks", "change_state")
+
 func _on_win():
 	get_tree().change_scene("res://Levels/Level" + str(int(get_tree().current_scene.filename)+1) + ".tscn")

@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Assets/xdown.png" type="Texture" id=1]
+[ext_resource path="res://Assets/element_border.png" type="Texture" id=2]
+[ext_resource path="res://Elements/XDown.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 6.4109
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 6.14149
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 6.12744
+
+[sub_resource type="CircleShape2D" id=4]
+radius = 5.80313
+
+[node name="XDown" type="Node2D" groups=[
+"horiz_mobiles",
+]]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="Sprite2" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="HorizArea" type="Area2D" parent="." groups=[
+"horiz_mobile_areas",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HorizArea"]
+position = Vector2( 8, 24 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="HorizArea"]
+position = Vector2( 8, -24 )
+shape = SubResource( 2 )
+
+[node name="VertiArea" type="Area2D" parent="." groups=[
+"verti_mobile_areas",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="VertiArea"]
+position = Vector2( 8, 8 )
+shape = SubResource( 3 )
+
+[node name="StatiArea" type="Area2D" parent="." groups=[
+"stationary_areas",
+]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StatiArea"]
+position = Vector2( 8, 8 )
+shape = SubResource( 4 )
